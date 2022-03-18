@@ -40,6 +40,12 @@ public class PermissionFirstAdvice {
         if (id < 0) {
             return JSON.parseObject("{\"message\":\"illegal id\",\"code\":403}");
         }
-        return joinPoint.proceed();
+
+        // 修改入参
+        JSONObject object = new JSONObject();
+        object.put("id", 8);
+        object.put("name", "lisi");
+        objects[0] = object;
+        return joinPoint.proceed(objects);
     }
 }

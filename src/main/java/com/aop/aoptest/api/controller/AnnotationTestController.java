@@ -22,6 +22,6 @@ public class AnnotationTestController {
     // 添加这个注解
     @PermissionsAnnotation(column = BuryingPointColumnEnum.COLUMN_QUERYFLIGHT)
     public JSONObject getGroupList(@RequestBody JSONObject request) {
-        return JSON.parseObject("{\"message\":\"SUCCESS\",\"code\":200}");
+        return JSON.parseObject("{\"message\":\"SUCCESS\",\"code\":200,\"data\":" + request + "}");
     }
 }
